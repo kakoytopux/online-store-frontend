@@ -1,0 +1,37 @@
+@import '../../utils/config';
+
+.header {
+  @include flex($justify: space-between);
+  padding: 20px 100px 0;
+}
+.header__icon {
+  background-image: url(../../images/icon.svg);
+  background-size: 100% 100%;
+  width: 40px;
+  height: 40px;
+}
+.header__navigation {
+  @include flex($align: center);
+  margin-right: 200px;
+}
+.header__nav-lists {
+  @include flex($gap: 30px);
+}
+.header__nav-list {
+  @include font($size: 18px, $weight: $weight-regular, $line-height: 22px);
+}
+.header__nav-list-link_active {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.header__auth-lists {
+  @include flex($gap: 20px, $align: center);
+}
+.header__auth-list {
+  @include font($size: 16px, $weight: $weight-medium, $line-height: 20px);
+}
+.header__auth-list-link_type_reg {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  color: brown;
+}
