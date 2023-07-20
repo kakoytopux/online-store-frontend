@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { FC } from 'react';
 import './App.scss';
 import { Routes, Route } from 'react-router-dom';
-import Main from '../Main/Main';
-import NotFound from '../NotFound/NotFound';
+import { Main } from '../Main/Main';
+import { NotFound } from '../NotFound/NotFound';
 
-export default function App() {
+export const App: FC = () => {
   return (
     <Routes>
       <Route path='/' element={<Main />}></Route>

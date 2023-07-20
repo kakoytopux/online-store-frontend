@@ -18,7 +18,7 @@
   @include flex($gap: 30px);
 }
 .header__nav-list {
-  @include font($size: 18px, $weight: $weight-regular, $line-height: 22px);
+  @include font($size: 17px, $weight: $weight-regular, $line-height: 22px);
 }
 .header__nav-list-link_active {
   text-decoration: underline;
@@ -28,7 +28,7 @@
   @include flex($gap: 20px, $align: center);
 }
 .header__auth-list {
-  @include font($size: 16px, $weight: $weight-medium, $line-height: 20px);
+  @include font($size: 14px, $weight: $weight-medium, $line-height: 19px);
 }
 .header__auth-list-link_type_reg {
   text-decoration: underline;

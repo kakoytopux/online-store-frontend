@@ -1,12 +1,16 @@
-import React from "react";
+import React, { FC } from "react";
 import './NotFound.scss';
+import { Link } from "react-router-dom";
 
-export default function NotFound() {
+export const NotFound: FC = () => {
   return (
     <main className="content">
       <section className="notfound">
-        <h1 className="notfound__title">404</h1>
-        <p className="notfound__subtitle">Ничего не найдено!</p>
+        <div className="notfound__icon"></div>
+        <p className="notfound__desc">Ничего не найдено!</p>
+        <div className="notfound__container">
+          <Link to='/' className="notfound__link link">На главную</Link>
+        </div>
       </section>
     </main>
   );

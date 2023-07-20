@@ -1,12 +1,11 @@
-import React from "react";
+import React, { FC } from "react";
 import './Header.scss';
 import { NavLink, Link } from "react-router-dom";
 
-export default function Header() {
+export const Header: FC = () => {
   return (
     <header className="header">
-      <a href="/#" className="header__icon link">
-      </a>
+      <Link to='/' className="header__icon link" />
       <nav className="header__navigation">
         <ul className="header__nav-lists lists">
           <li className="header__nav-list">

@@ -1,3 +1,5 @@
+@import '../../vendor/fonts';
+
 .lists {
   list-style: none;
   padding: 0;
@@ -15,4 +17,5 @@
 
 .body {
   margin: 0;
+  font-family: 'Lato', Tahoma, sans-serif;
 }

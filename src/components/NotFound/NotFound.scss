@@ -1,0 +1,31 @@
+@import '../../utils/config';
+
+.notfound {
+  @include flex($direction: column, $justify: center, $align: center);
+  min-height: 100vh;
+  position: relative;
+}
+.notfound__icon {
+  background-image: url(../../images/not-found.svg);
+  background-size: 100% 100%;
+  width: 150px;
+  height: 150px;
+}
+.notfound__desc {
+  @include font($size: 16px, $weight: $weight-regular, $line-height: 22px);
+  margin: 15px 0 0 0;
+}
+.notfound__container {
+  position: absolute;
+  bottom: 200px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.notfound__link {
+  @include font($size: 13px, $weight: $weight-medium, $line-height: 19px);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  color: salmon;
+}

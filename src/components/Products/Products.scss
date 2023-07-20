@@ -1,0 +1,12 @@
+@import '../../utils/config';
+
+.products {
+  padding-top: 120px;
+}
+.products__lists {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 230px);
+  column-gap: 80px;
+  row-gap: 50px;
+  justify-content: center;
+}
