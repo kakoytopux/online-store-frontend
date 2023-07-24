@@ -14,7 +14,7 @@ interface Items {
   items: ItemElement[],
 }
 
-export const Products: FC = (): JSX.Element => {
+export const Products: FC = () => {
   const [products, setProducts] = useState<Items>({items: []});
 
   useEffect(() => {

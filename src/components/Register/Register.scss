@@ -1,0 +1,76 @@
+@import '../../utils/config';
+
+.auth-form {
+  @include flex($justify: center, $align: center);
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-height: 100vh;
+  z-index: -1;
+}
+.auth-form__container {
+  width: 250px;
+}
+.auth-form__box {
+  @include flex($direction: column);
+  margin-bottom: 15px;
+  position: relative;
+}
+.auth-form__box:last-of-type {
+  margin-bottom: 0;
+}
+.auth-form__label {
+  @include font($size: 13px, $weight: $weight-medium, $line-height: 100%);
+  margin-left: 3px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all .3s linear;
+  color: #808080;
+}
+.auth-form__label_active {
+  top: -11px;
+  @include font($size: 11px);
+}
+.auth-form__field {
+  height: 33px;
+  border-radius: 5px;
+  padding: 0 0 0 3px;
+  border: 1px solid #808080;
+  outline: 0;
+  box-sizing: border-box;
+  @include font($size: 14px, $weight: $weight-medium, $line-height: 19px);
+}
+.auth-form__box-eye-btn {
+  @include flex($align: center);
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 3px;
+}
+.auth-form__eye {
+  background-image: url('../../images/eye-icon/eye-hidden.svg');
+  background-size: 100% 100%;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+}
+.auth-form__eye_show {
+  background-image: url('../../images/eye-icon/eye-show.svg');
+}
+.auth-form__submit {
+  padding: 0;
+  border: 0;
+  cursor: pointer;
+  height: 40px;
+  @include font($size: 15px, $weight: $weight-regular, $line-height: 20px);
+  margin-top: 40px;
+  border-radius: 10px;
+  background-color: steelblue;
+  color: #fff;
+  width: 100%;
+}

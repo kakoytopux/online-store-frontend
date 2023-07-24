@@ -14,10 +14,16 @@
     gap: $gap;
   }
 }
-@mixin font($size, $weight, $line-height) {
-  font-size: $size;
-  font-weight: $weight;
-  line-height: $line-height;
+@mixin font($size: false, $weight: false, $line-height: false) {
+  @if $size {
+    font-size: $size;
+  }
+  @if $weight {
+    font-weight: $weight;
+  }
+  @if $line-height {
+    line-height: $line-height;
+  }
 }
 
 $weight-regular: 400;

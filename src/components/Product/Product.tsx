@@ -9,16 +9,18 @@ interface Props {
   price: string,
 }
 
-export const Product: FC<Props> = ({ img_url, name, desc, price }): JSX.Element => {
+export const Product: FC<Props> = ({ img_url, name, desc, price }) => {
   return (
     <li className="product">
       <Link to='/#' className="product__link link" />
       <img src={img_url} alt={name} className="product__img" />
+      <h3 className="product__title">{name}</h3>
+      <p className="product__desc">{desc}</p>
       <div className="product__container">
-        <h3 className="product__title">{name}</h3>
-        <p className="product__desc">{desc}</p>
+        <p className="product__price">{price} &#8381;</p>
         <div className="product__box">
-          <p className="product__price">{price} &#8381;</p>
+          <button type="button" className="product__heart btn"></button>
+          <button type="button" className="product__cart btn"></button>
         </div>
       </div>
     </li>

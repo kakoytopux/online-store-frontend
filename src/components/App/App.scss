@@ -14,8 +14,17 @@
 .link:hover {
   opacity: .5;
 }
+.btn {
+  background-color: transparent;
+  padding: 0;
+  border: 0;
+  cursor: pointer;
+  z-index: 1;
+}
 
 .body {
   margin: 0;
   font-family: 'Lato', Tahoma, sans-serif;
+  background-color: rgb(241, 245, 249);
+  position: relative;
 }

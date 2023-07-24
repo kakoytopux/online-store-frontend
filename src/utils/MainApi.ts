@@ -4,6 +4,12 @@ interface Options {
     'Content-Type': string
   }
 }
+interface Register {
+  name: string,
+  surname: string,
+  email: string,
+  password: string,
+}
 
 class MainApi {
   private readonly url: string;
@@ -20,6 +26,19 @@ class MainApi {
     return fetch(`${this.url}/items`, {
       method: 'GET',
       headers: this.headers,
+    })
+    .then(res => res.json())
+  }
+  public register({ name, surname, email, password }: Register) {
+    return fetch(`${this.url}/signup`, {
+      method: 'POST',
+      headers: this.headers,
+      body: JSON.stringify({
+        name: name,
+        surname: surname,
+        email: email,
+        password: password,
+      })
     })
     .then(res => res.json())
   }
