@@ -1,4 +1,4 @@
-import React, { FC, useState, useEffect } from "react";
+import { FC, useState, useEffect } from "react";
 import './Products.scss';
 import { Product } from "../Product/Product";
 import { mainApi } from "../../utils/MainApi";

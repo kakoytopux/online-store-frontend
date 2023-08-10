@@ -1,8 +1,11 @@
 import React, { FC } from "react";
 import './Header.scss';
 import { NavLink, Link } from "react-router-dom";
+import { useAppSelector } from '../../redux/hooks';
 
 export const Header: FC = () => {
+  const authData = useAppSelector(state => state.auth.value);
+
   return (
     <header className="header">
       <Link to='/' className="header__icon link" />
@@ -34,14 +37,16 @@ export const Header: FC = () => {
           </li>
         </ul>
       </nav>
-      <ul className="header__auth-lists lists">
-        <li className="header__auth-list">
-          <Link to='/register' className="header__auth-list-link header__auth-list-link_type_reg link">Регистрация</Link>
-        </li>
-        <li className="header__auth-list">
-          <Link to='/auth' className="header__auth-list-link link">Войти</Link>
-        </li>
-      </ul>
+      <div className="header__box-auth">
+        {authData ?
+        <Link to='/profile' className="header__profile-link link">Профиль</Link>
+        :
+        <>
+        <Link to='/register' className="header__auth-link header__auth-link_type_reg link">Регистрация</Link>
+        <Link to='/login' className="header__auth-link link">Войти</Link>
+        </>
+        }
+      </div>
     </header>
   );
 }

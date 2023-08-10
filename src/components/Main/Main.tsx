@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import { FC } from "react";
 import './Main.scss';
 import { Header } from "../Header/Header";
 import { Products } from "../Products/Products";

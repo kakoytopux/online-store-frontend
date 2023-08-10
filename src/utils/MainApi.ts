@@ -4,9 +4,9 @@ interface Options {
     'Content-Type': string
   }
 }
-interface Register {
-  name: string,
-  surname: string,
+interface Auth {
+  name?: string,
+  surname?: string,
   email: string,
   password: string,
 }
@@ -21,15 +21,21 @@ class MainApi {
     this.url = options.url;
     this.headers = options.headers;
   }
+  private statusRequest(res: any) {
+    if(!res.ok) {
+      return Promise.reject(`Ошибка: ${res.statusText + ' ' + res.status}`);
+    }
 
+    return res.json();
+  }
   public get products() {
     return fetch(`${this.url}/items`, {
       method: 'GET',
       headers: this.headers,
     })
-    .then(res => res.json())
+    .then(res => this.statusRequest(res))
   }
-  public register({ name, surname, email, password }: Register) {
+  public register({ name, surname, email, password }: Auth) {
     return fetch(`${this.url}/signup`, {
       method: 'POST',
       headers: this.headers,
@@ -40,7 +46,27 @@ class MainApi {
         password: password,
       })
     })
-    .then(res => res.json())
+    .then(res => this.statusRequest(res))
+  }
+  public login({ email, password }: Auth) {
+    return fetch(`${this.url}/signin`, {
+      method: 'POST',
+      headers: this.headers,
+      credentials: 'include',
+      body: JSON.stringify({
+        email: email,
+        password: password,
+      })
+    })
+    .then(res => this.statusRequest(res))
+  }
+  public get user() {
+    return fetch(`${this.url}/users/me`, {
+      method: 'GET',
+      headers: this.headers,
+      credentials: 'include',
+    })
+    .then(res => this.statusRequest(res))
   }
 }
 

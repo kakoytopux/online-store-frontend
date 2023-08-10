@@ -25,13 +25,17 @@
   text-decoration: underline;
   text-underline-offset: 4px;
 }
-.header__auth-lists {
+.header__box-auth {
   @include flex($gap: 20px, $align: center);
 }
-.header__auth-list {
+.header__profile-link {
+  @include font($size: 15px, $weight: $weight-bold, $line-height: 23px);
+  color: royalblue;
+}
+.header__auth-link {
   @include font($size: 14px, $weight: $weight-medium, $line-height: 19px);
 }
-.header__auth-list-link_type_reg {
+.header__auth-link_type_reg {
   text-decoration: underline;
   text-underline-offset: 2px;
   color: brown;
