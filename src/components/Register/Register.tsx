@@ -5,7 +5,6 @@ import { Auth } from '../Auth/Auth';
 
 export const Register: FC = () => {
   const [nameField, setNameField] = useState<string>('');
-  const [surnameField, setSurnameField] = useState<string>('');
   const [emailField, setEmailField] = useState<string>('');
   const [passwordField, setPasswordField] = useState<string>('');
 
@@ -15,9 +14,6 @@ export const Register: FC = () => {
 
     if(name === 'name') {
       setNameField(value);
-    }
-    if(name === 'surname') {
-      setSurnameField(value);
     }
     if(name === 'email') {
       setEmailField(value);
@@ -32,7 +28,6 @@ export const Register: FC = () => {
 
     mainApi.register({
       name: nameField,
-      surname: surnameField,
       email: emailField,
       password: passwordField,
     })
@@ -55,20 +50,6 @@ export const Register: FC = () => {
           maxLength={30}
           onChange={changeField}
           value={nameField}
-          />
-        </div>
-        <div className='auth-form__box'>
-          <label htmlFor='surname' className='auth-form__label'>Фамилия</label>
-          <input
-          type='text'
-          id='surname'
-          className='auth-form__field'
-          name='surname'
-          required
-          minLength={2}
-          maxLength={30}
-          onChange={changeField}
-          value={surnameField}
           />
         </div>
         <div className='auth-form__box'>

@@ -6,7 +6,6 @@ interface Options {
 }
 interface Auth {
   name?: string,
-  surname?: string,
   email: string,
   password: string,
 }
@@ -35,13 +34,12 @@ class MainApi {
     })
     .then(res => this.statusRequest(res))
   }
-  public register({ name, surname, email, password }: Auth) {
+  public register({ name, email, password }: Auth) {
     return fetch(`${this.url}/signup`, {
       method: 'POST',
       headers: this.headers,
       body: JSON.stringify({
         name: name,
-        surname: surname,
         email: email,
         password: password,
       })

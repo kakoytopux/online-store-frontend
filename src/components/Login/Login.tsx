@@ -4,11 +4,13 @@ import { mainApi } from '../../utils/MainApi';
 import { Auth } from '../Auth/Auth';
 import { setTrue } from '../../redux/slices/auth';
 import { useAppDispatch } from '../../redux/hooks';
+import { useNavigate } from 'react-router-dom';
 
 export const Login: FC = () => {
   const [emailField, setEmailField] = useState<string>('');
   const [passwordField, setPasswordField] = useState<string>('');
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
 
   const changeField = (evt: any) => {
     const name = evt.target.name;
@@ -31,6 +33,7 @@ export const Login: FC = () => {
     })
     .then(res => {
       dispatch(setTrue());
+      navigate('/');
       console.log(res);
     })
     .catch(err => console.log(err))

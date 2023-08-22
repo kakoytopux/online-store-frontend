@@ -5,18 +5,21 @@ export interface UserState {
 }
 
 const initialState: UserState = {
-  value: null
+  value: true
 }
 
 const userSlice = createSlice({
   name: 'user',
   initialState,
   reducers: {
+    setNull: state => {
+      state.value = null;
+    },
     addUserData: (state, data: PayloadAction<any>) => {
       state.value = data.payload;
     },
   },
 });
 
-export const { addUserData } = userSlice.actions;
+export const { setNull, addUserData } = userSlice.actions;
 export default userSlice.reducer;

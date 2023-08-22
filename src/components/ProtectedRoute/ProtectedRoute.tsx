@@ -3,7 +3,8 @@ import { useAppSelector } from '../../redux/hooks';
 import { Navigate } from 'react-router-dom';
 
 export const ProtectedRoute: FC<any> = ({ element: Component, ...props }) => {
-  const authData = useAppSelector(state => state.auth.value);
+  const user = useAppSelector(state => state.user.value);
+  const auth = useAppSelector(state => state.auth.value);
   
-  return authData ? <Component {...props} /> : <Navigate to='/' />;
+  return user || auth ? <Component {...props} /> : <Navigate to='/' />;
 }

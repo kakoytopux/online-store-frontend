@@ -7,19 +7,22 @@ import { Register } from '../Register/Register';
 import { Login } from '../Login/Login';
 import { mainApi } from '../../utils/MainApi';
 import { useAppDispatch } from '../../redux/hooks';
-import { addUserData } from '../../redux/slices/user';
-import { setFalse } from '../../redux/slices/auth';
+import { addUserData, setNull } from '../../redux/slices/user';
 import { ProtectedRoute } from '../ProtectedRoute/ProtectedRoute';
 import { Profile } from '../Profile/Profile';
+import { setTrue } from '../../redux/slices/auth';
 
 export const App: FC = () => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
     mainApi.user
-    .then(res => dispatch(addUserData(res)))
+    .then(res => {
+      dispatch(addUserData(res));
+      dispatch(setTrue());
+    })
     .catch(err => {
-      dispatch(setFalse());
+      dispatch(setNull());
       console.log(err);
     })
   }, [dispatch]);

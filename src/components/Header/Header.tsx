@@ -1,10 +1,10 @@
-import React, { FC } from "react";
+import { FC } from "react";
 import './Header.scss';
 import { NavLink, Link } from "react-router-dom";
 import { useAppSelector } from '../../redux/hooks';
 
 export const Header: FC = () => {
-  const authData = useAppSelector(state => state.auth.value);
+  const auth = useAppSelector(state => state.auth.value);
 
   return (
     <header className="header">
@@ -38,7 +38,7 @@ export const Header: FC = () => {
         </ul>
       </nav>
       <div className="header__box-auth">
-        {authData ?
+        {auth ?
         <Link to='/profile' className="header__profile-link link">Профиль</Link>
         :
         <>
