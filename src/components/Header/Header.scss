@@ -13,7 +13,6 @@
 }
 .header__navigation {
   @include flex($align: center);
-  margin-right: 200px;
 }
 .header__nav-lists {
   @include flex($gap: 30px);

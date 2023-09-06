@@ -24,11 +24,11 @@
   width: 100%;
   height: 200px;
   object-fit: cover;
-  @include font($size: 13px, $weight: 400, $line-height: 18px);
+  @include font($size: 13px, $weight: $weight-regular, $line-height: 18px);
   box-shadow: 0 0 10px rgba(0, 0, 0, .4);
 }
 .product__title {
-  @include font($size: 16px, $weight: 500, $line-height: 21px);
+  @include font($size: 16px, $weight: $weight-medium, $line-height: 21px);
   margin: 10px 0 0 0;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -39,7 +39,7 @@
   max-width: 100%;
 }
 .product__desc {
-  @include font($size: 12px, $weight: 400, $line-height: 17px);
+  @include font($size: 12px, $weight: $weight-regular, $line-height: 17px);
   margin: 5px 0 0 0;
   word-wrap: break-word;
   overflow: hidden;
@@ -55,7 +55,7 @@
   flex-grow: 1;
 }
 .product__price {
-  @include font($size: 16px, $weight: 500, $line-height: 21px);
+  @include font($size: 16px, $weight: $weight-medium, $line-height: 21px);
   margin: 0;
   z-index: 1;
 }

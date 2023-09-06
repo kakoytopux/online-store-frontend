@@ -1,0 +1,21 @@
+@import '../../utils/config';
+
+.search-form {
+  @include flex($align: center, $gap: 5px);
+}
+.search-form__field {
+  width: 300px;
+  height: 100%;
+  border-radius: 100px;
+  padding: 0 0 0 7px;
+  box-sizing: border-box;
+  outline: 0;
+  border: 1px solid #000;
+  @include font($size: 15px, $weight: $weight-regular, $line-height: 22px);
+}
+.search-form__submit {
+  background-image: url(../../images/search-icon.svg);
+  background-size: 100% 100%;
+  width: 27px;
+  height: 27px;
+}

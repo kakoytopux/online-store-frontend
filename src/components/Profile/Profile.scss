@@ -1,0 +1,6 @@
+@import '../../utils/config';
+
+.profile__form {
+  @include flex($direction: column, $justify: center, $align: center);
+  height: 100%;
+}
