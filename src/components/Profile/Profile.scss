@@ -1,6 +1,42 @@
 @import '../../utils/config';
 
+.profile {
+  @include flex($justify: center);
+}
+.profile__container {
+  width: 500px;
+  height: 500px;
+  background-color: rgba(255, 255, 255, .5);
+  border-radius: 10px;
+  @include flex($direction: column, $justify: center, $align: center);
+}
 .profile__form {
   @include flex($direction: column, $justify: center, $align: center);
   height: 100%;
 }
+.profile__box-field {
+  width: 300px;
+  @include flex($justify: space-between);
+  margin-top: 30px;
+}
+.profile__box-field:first-of-type {
+  margin-top: 0;
+}
+.profile__label {
+  @include font($size: 14px, $line-height: 20px, $weight: $weight-bold);
+}
+.profile__field {
+  text-align: right;
+  padding: 0 5px 0 0;
+  border: 0;
+  background-color: transparent;
+  @include font($size: 18px, $line-height: 25px, $weight: $weight-regular);
+}
+.profile__exit {
+  background-color: #f00;
+  width: 100px;
+  height: 30px;
+  @include font($size: 13px, $line-height: 20px, $weight: $weight-bold);
+  margin-bottom: 20px;
+}
+

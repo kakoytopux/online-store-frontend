@@ -6,13 +6,14 @@ import { NotFound } from '../NotFound/NotFound';
 import { Register } from '../Register/Register';
 import { Login } from '../Login/Login';
 import { mainApi } from '../../utils/MainApi';
-import { useAppDispatch } from '../../redux/hooks';
-import { addUserData, setNull } from '../../redux/slices/user';
+import { useAppDispatch, useAppSelector } from '../../redux/hooks';
+import { addUserData, setUserNull } from '../../redux/slices/user';
 import { ProtectedRoute } from '../ProtectedRoute/ProtectedRoute';
 import { Profile } from '../Profile/Profile';
 import { setTrue } from '../../redux/slices/auth';
 
 export const App: FC = () => {
+  const auth = useAppSelector(state => state.auth.value);
   const dispatch = useAppDispatch();
 
   useEffect(() => {
@@ -22,10 +23,10 @@ export const App: FC = () => {
       dispatch(setTrue());
     })
     .catch(err => {
-      dispatch(setNull());
+      dispatch(setUserNull());
       console.log(err);
     })
-  }, [dispatch]);
+  }, [dispatch, auth]);
 
   return (
     <Routes>

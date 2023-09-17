@@ -58,6 +58,14 @@ class MainApi {
     })
     .then(res => this.statusRequest(res))
   }
+  public exit() {
+    return fetch(`${this.url}/signout`, {
+      method: 'DELETE',
+      headers: this.headers,
+      credentials: 'include',
+    })
+    .then(res => this.statusRequest(res))
+  }
   public get user() {
     return fetch(`${this.url}/users/me`, {
       method: 'GET',

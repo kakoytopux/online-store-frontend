@@ -12,7 +12,7 @@ const userSlice = createSlice({
   name: 'user',
   initialState,
   reducers: {
-    setNull: state => {
+    setUserNull: state => {
       state.value = null;
     },
     addUserData: (state, data: PayloadAction<any>) => {
@@ -21,5 +21,5 @@ const userSlice = createSlice({
   },
 });
 
-export const { setNull, addUserData } = userSlice.actions;
+export const { setUserNull, addUserData } = userSlice.actions;
 export default userSlice.reducer;

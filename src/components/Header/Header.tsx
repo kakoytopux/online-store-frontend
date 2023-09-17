@@ -4,7 +4,11 @@ import { NavLink, Link } from "react-router-dom";
 import { useAppSelector } from '../../redux/hooks';
 import { Search } from "../Search/Search";
 
-export const Header: FC = () => {
+interface Props {
+  search?: null,
+}
+
+export const Header: FC<Props> = ({ search }) => {
   const auth = useAppSelector(state => state.auth.value);
 
   return (
@@ -38,7 +42,9 @@ export const Header: FC = () => {
           </li>
         </ul>
       </nav>
-      <Search />
+      { search !== null &&
+        <Search /> 
+      }
       <div className="header__box-auth">
         {auth ?
         <Link to='/profile' className="header__profile-link link">Профиль</Link>
