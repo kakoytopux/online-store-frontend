@@ -27,7 +27,7 @@ class MainApi {
 
     return res.json();
   }
-  public get products() {
+  public products() {
     return fetch(`${this.url}/items`, {
       method: 'GET',
       headers: this.headers,
@@ -66,7 +66,7 @@ class MainApi {
     })
     .then(res => this.statusRequest(res))
   }
-  public get user() {
+  public user() {
     return fetch(`${this.url}/users/me`, {
       method: 'GET',
       headers: this.headers,

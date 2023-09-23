@@ -25,7 +25,7 @@ export const Products: FC = () => {
       return;
     }
 
-    mainApi.products
+    mainApi.products()
     .then(res => {
       sessionStorage.setItem('products', JSON.stringify(res));
       dispatch(addItemsData(res));

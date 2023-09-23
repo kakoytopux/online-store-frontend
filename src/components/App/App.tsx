@@ -17,7 +17,7 @@ export const App: FC = () => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    mainApi.user
+    mainApi.user()
     .then(res => {
       dispatch(addUserData(res));
       dispatch(setTrue());
